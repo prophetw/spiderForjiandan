@@ -1,13 +1,12 @@
 #coding:UTF-8
 from bs4 import BeautifulSoup
 import requests as rs
-import re
 import os
 
 # args
-imagebeginpage=2200
-imageendpage=2300
-votelimit = 300
+imagebeginpage=2000
+imageendpage=2600
+votelimit = 500
 
 def downloadImg(url,dirName,prefixName,extraName,description):
     # Todo how to write description to a image file
@@ -69,10 +68,9 @@ while(imagebeginpage<imageendpage):
     beginPage = str(imagebeginpage)
     print(imagebeginpage)
     # 妹纸
-    # 'http://jandan.net/ooxx/page-' + beginPage + '#comments'
+    # requestUrl = 'http://jandan.net/ooxx/page-' + beginPage + '#comments'
     # 无聊
-    # 'http://jandan.net/pic/page-' + beginPage + '#comments'
-    requestUrl = 'http://jandan.net/ooxx/page-' + beginPage + '#comments'
+    requestUrl = 'http://jandan.net/pic/page-' + beginPage + '#comments'
     getImg(requestUrl)
     imagebeginpage +=1
 
